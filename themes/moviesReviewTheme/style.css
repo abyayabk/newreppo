@@ -1,0 +1,335 @@
+/*
+ Theme Name: Movies Review
+ Author: Abbu
+ Version: 1.0
+*/
+
+
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+}
+
+.body-container {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo a{
+    font-size: 24px;
+    text-decoration: none;
+    color: #e50914; /* Netflix red */
+  }
+  .logo {
+    color: #e50914; /* Netflix red */
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Netflix Sans', Arial, sans-serif; /* Netflix font */
+}
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .login-button {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+.login-button:hover {
+    background-color: #ff3e00; /* Darker shade of Netflix red */
+}
+
+.search-icon {
+    position: relative;
+  }
+  
+  .search-icon input {
+    padding: 8px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+  }
+  
+  .search-icon i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    cursor: pointer;
+  }
+
+.welcome-message {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.slider-section {
+    margin-top: 50px;
+    background-color: #333;
+    height: 400px; /* Adjust as needed */
+}
+
+/* Placeholder styling for slider */
+.slider-section::after {
+    content: "Netflix Slider Placeholder";
+    display: block;
+    text-align: center;
+    padding-top: 200px;
+    color: #fff;
+    font-size: 24px;
+}
+
+/* ARCHIVES STYLE BEGINS FROM HERE */
+
+.archive-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align movie cards to the left */
+    margin-top: 20px; /* Add some space between header and movie cards */
+    padding: 80px; /* Add padding around the archive content */
+    position: relative; /* Make the position relative for the filter button */
+}
+
+.movie-card {
+    width: calc(33.33% - 20px); /* Set a width for the movie card (3 cards in one row with margin between them) */
+    height: 400px; /* Set a fixed height for the movie card */
+    margin: 0 10px 20px; /* Add margin around each movie card */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    border: 1px solid #ccc; /* Add border around the archive content */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    overflow: hidden; /* Hide overflow content (if any) */
+}
+
+.movie-card img {
+    width: 100%; /* Ensure the image fills the container horizontally */
+    height: 360px; /* Set the height of the image (adjust as needed) */
+    object-fit: cover; /* Ensure the image covers the entire container without distortion */
+    display: block; /* Ensure the image respects its container's dimensions */
+    border-top-left-radius: 5px; /* Rounded corners for the image */
+    border-top-right-radius: 5px; /* Rounded corners for the image */
+}
+
+.movie-title {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Update filter button styles */
+.filter-container {
+    position: absolute; /* Position the filter container */
+    top: 0; /* Align to the top of archive content */
+    left: 100px; /* Align to the left with a margin of 10px */
+    padding: 10px; /* Padding around the filter container */
+    background-color: #111; /* Dark background color */
+    color: #fff; /* Text color */
+    font-size: 20px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+}
+/* Style for filter button */
+.filter-dropdown {
+    padding: 10px 15px; /* Adjust padding */
+    background-color: #ff3e00; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Add border radius */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+/* Hover effect for filter button */
+.filter-dropdown:hover {
+    background-color: #ff3e00; /* Darker shade on hover */
+}
+
+/* Style for dropdown arrow */
+.filter-arrow {
+    margin-left: 5px; /* Adjust margin */
+}
+
+/* Style for dropdown content */
+.filter-dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute; /* Position absolute */
+    background-color: #f9f9f9; /* Background color */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Box shadow */
+    z-index: 1; /* Ensure it's above other elements */
+    border-radius: 4px; /* Add border radius */
+}
+
+/* Style for dropdown options */
+.filter-dropdown-content a {
+    color: black; /* Text color */
+    padding: 12px 16px; /* Padding */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Display as block element */
+}
+
+/* Hover effect for dropdown options */
+.filter-dropdown-content a:hover {
+    background-color: #f1f1f1; /* Background color on hover */
+}
+
+/* Show dropdown content */
+.show {
+    display: block; /* Show dropdown content */
+}
+
+
+
+/* HERE STARTS CSS FOR THE BLOG POST */
+
+.content-padding {
+    padding: 80px;
+  }
+  
+  .content-container {
+    /*border: 2px solid #ccc;*/
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .post-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .post-details {
+    margin-top: 20px;
+  }
+  
+  .post-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .post-metadata {
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .post-description {
+    text-align: justify;
+    margin-bottom: 50px;
+
+  }
+
+  /* CSS FOR SEARCH OVERLAY */
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    z-index: 1000;
+  }
+  
+  .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent; /* Make the background transparent */
+    padding: 20px;
+    border-radius: 0; /* Remove border radius */
+    width: 80%; /* Set desired width */
+    max-width: 800px; /* Maximum width of the container */
+    max-height: 80%; /* Maximum height of the container */
+    overflow: auto;
+    font-size: 30px;
+    color: #e50914;
+    font-family: 'Netflix Sans', Arial, sans-serif; /* Netflix font */
+
+  }
+  
+  .overlay-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff; /* Change text color to white */
+    font-family: 'Netflix Sans', Arial, sans-serif; /* Netflix font */
+
+  }
+  
+  .overlay-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .overlay-content ul li {
+    margin-bottom: 10px;
+  }
+  
+  .overlay-content ul li a {
+    color: #fff; /* Change link color to white */
+    text-decoration: none;
+  }
+  
+  .overlay-content ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
